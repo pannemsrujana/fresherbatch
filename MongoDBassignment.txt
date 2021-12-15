@@ -100,11 +100,11 @@ BONUS
 
 13)db.addresses.find({"cuisine":{$ne:"American"},"grades.grade":"A","borough":{$ne:"Brooklyn"}}).sort({"cuisine":1})
 
-14)db.addresses.find({},{name:"Wil","restaurant_id":1,"borough":1,"cuisine":1,_id:0})
+14)db.addresses.find({name:/^Wil/},{"restaurant_id":1,"borough":1,"cuisine":1,"name":1})
 
-15)db.addresses.find({},{name:"ces","restaurant_id":1,"borough":1,"cuisine":1,_id:0})
+15)db.addresses.find({name:/^ces/},{"restaurant_id":1,"borough":1,"cuisine":1,"name":1})
 
-16)db.addresses.find({name:/.*Reg.*/},{"restaurant_id":1,"borough":1,"cuisine":1})
+16)db.addresses.find({name:/^Reg/},{"restaurant_id":1,"borough":1,"cuisine":1})
 
 17)db.addresses.find({"borough":"Bronx",$or:[{cuisine:"American"},{cuisine:"Chinese"}]})
 
